@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body style="font-family:'Lato',sans-serif;">
+    <!-- This example requires Tailwind CSS v2.0+ -->
+<div class="max-w-3xl mx-auto justify-center">
+  <div class="text-center my-10">
+    <h1 class="font-bold text-3xl mb-2 text-blue-600">Hello {{ guser_data['name'] }} {{ guser_data['surname'] }}</h1>
+    <h4 class="text-gray-600"></h4>
+</div>
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+    <div class="px-4 py-5 sm:px-6">
+      <h3 class="text-lg leading-6 font-medium text-gray-900">
+        User Information
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm text-gray-500">
+        Personal details
+      </p>
+      <p class="ml-auto py-3">
+        <svg class="h-8 w-8 rounded-full bg-gray-500" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      </p>
+    </div>
+    <div class="border-t border-gray-200">
+      <dl>
+        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500">
+            Name
+          </dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+            {{ guser_data['name'] }}
+          </dd>
+        </div>
+        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500">
+            Surname
+          </dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+            {{ guser_data['surname'] }}
+          </dd>
+        </div>
+        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">
+              Username
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                {{ guser_data['username'] }}
+            </dd>
+          </div>
+        {% if nuser_data|length > 0 %}
+        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500">
+            Email address
+          </dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+            {{ nuser_data['email'] }}
+          </dd>
+        </div>
+        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">
+              Birthdate
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                {{ nuser_data['birthdate'] }}
+            </dd>
+          </div>
+        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500">
+           You are using Emotive for
+          </dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+            *{{ nuser_data['reason'] }}
+          </dd>
+        </div>
+        {% endif %}
+        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+            <dt class="text-sm font-medium text-gray-500">
+              Role
+            </dt>
+            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                {{ guser_data['role'] }}
+            </dd>
+          </div>
+    </div>
+    <div class="mx-5 py-5"> 
+        <a href="edit.html"><button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+          </svg>
+          Edit</button></a>
+    </div>
+</div>
+
+<div class="text-blue-600 py-3">
+<a class="hover:text-blue-400" href="/nav">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+      </svg>
+    Go back</a>
+</div>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
