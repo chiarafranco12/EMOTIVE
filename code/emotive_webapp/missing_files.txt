@@ -1,1 +1,2 @@
 In order to run properly the web application you have to download node_modules, flask_session and all the other python libraries not already installed on you're device.
+You also have to create two folders in the folder 'static' and rename them 'uploads' and 'save'.
