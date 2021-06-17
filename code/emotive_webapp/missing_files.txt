@@ -1,0 +1,1 @@
+In order to run properly the web application you have to download node_modules, flask_session and all the other python libraries not already installed on you're device.
